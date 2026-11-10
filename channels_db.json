@@ -51,7 +51,7 @@
       "category": "Notícias / TV Aberta",
       "status": "inactive",
       "last_seen": "2026-11-10T16:34:33.630832",
-      "temp_active": true,
+      "temp_active": false,
       "inactive_since": "2026-11-10T16:34:33.630832"
     },
     {
@@ -60,7 +60,7 @@
       "category": "Notícias / TV Aberta",
       "status": "inactive",
       "last_seen": "2026-11-10T16:34:33.630832",
-      "temp_active": true,
+      "temp_active": false,
       "inactive_since": "2026-11-10T16:34:33.630832"
     }
   ]
