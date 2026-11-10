@@ -1,3 +1,44 @@
 {
-  "channels": []
+  "channels": [
+    {
+      "name": "YouTube video player",
+      "url": "https://www.youtube.com/embed/mnifXgnCep0?si=SHsbSXESsAgoeaoQ&autoplay=1&mute=1&playsinline=1&rel=0",
+      "category": "Notícias / Ao Vivo",
+      "status": "active",
+      "last_seen": "2026-11-10T16:25:22.634522",
+      "temp_active": true
+    },
+    {
+      "name": "Dailymotion video player",
+      "url": "https://geo.dailymotion.com/player/x1o0om.html?video=xbvj1ru&mute=true&loop=true",
+      "category": "Notícias / Ao Vivo",
+      "status": "active",
+      "last_seen": "2026-11-10T16:25:22.634522",
+      "temp_active": true
+    },
+    {
+      "name": "Transmissão Ao Vivo",
+      "url": "https://www.google.com/recaptcha/api2/aframe",
+      "category": "Notícias / Ao Vivo",
+      "status": "active",
+      "last_seen": "2026-11-10T16:25:22.634522",
+      "temp_active": true
+    },
+    {
+      "name": "Criteo GUM iframe",
+      "url": "https://gum.criteo.com/syncframe?origin=publishertagids&topUrl=gauchazh.clicrbs.com.br&gdpr=0&gdpr_consent=&gpp=DBABL~BVQqAAAAAg&gpp_sid=7#{\"bundle\":{\"origin\":0},\"optout\":{\"value\":false,\"origin\":0},\"tld\":\"clicrbs.com.br\",\"topUrl\":\"gauchazh.clicrbs.com.br\",\"version\":110440,\"origin\":\"publishertagids\",\"requestId\":\"0.6724668690074427\"}",
+      "category": "Notícias / Ao Vivo",
+      "status": "active",
+      "last_seen": "2026-11-10T16:25:22.634522",
+      "temp_active": true
+    },
+    {
+      "name": "Transmissão Ao Vivo",
+      "url": "https://cm.g.doubleclick.net/partnerpixels?gdpr=0&us_privacy=1---&gpp=DBABL~BVQqAAAAAg&gpp_sid=7&url=https%3A%2F%2Fgauchazh.clicrbs.com.br%2F",
+      "category": "Notícias / Ao Vivo",
+      "status": "active",
+      "last_seen": "2026-11-10T16:25:22.634522",
+      "temp_active": true
+    }
+  ]
 }
