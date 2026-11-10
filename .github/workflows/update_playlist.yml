@@ -2,14 +2,14 @@ name: Atualizar Playlist M3U (6 em 6 horas)
 
 on:
   schedule:
-    - cron: '0 */6 * * *' # Executa a cada 6 horas (00:00, 06:00, 12:00, 18:00 UTC)
-  workflow_dispatch: # Permite que você execute manualmente pela aba "Actions"
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
 
 jobs:
   update-playlist:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout do código
+      - name: Checkout do codigo
         uses: actions/checkout@v4
 
       - name: Configurar Python
@@ -17,23 +17,31 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Instalar dependências
+      - name: Instalar dependencias Python
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          playwright install chromium
-          playwright install-deps chromium
 
-      - name: Executar Scraper e Atualizador
+      - name: Instalar dependencias do sistema (Correcao Ubuntu recente)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libasound2t64 libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm1 libpango-1.0-0 libcairo2 || true
+
+      - name: Instalar navegador Chromium
+        run: |
+          playwright install chromium
+          # Tenta instalar as deps oficiais, mas ignora erro se algum pacote tiver nome diferente
+          playwright install-deps chromium || true
+
+      - name: Executar Scraper
         run: python scraper.py
         env:
-          # Você pode definir SOURCE_URL nas Secrets do repositório se desejar
           SOURCE_URL: ${{ secrets.SOURCE_URL || 'https://gauchazh.clicrbs.com.br/' }}
 
-      - name: Commit e Push das alterações
+      - name: Commit e Push
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add channels_db.json playlist.m3u
-          git diff --staged --quiet || git commit -m "chore: atualização automática da playlist M3U"
+          git diff --staged --quiet || git commit -m "chore: atualizacao automatica da playlist M3U"
           git push
